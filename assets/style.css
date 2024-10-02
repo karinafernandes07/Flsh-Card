@@ -6,7 +6,7 @@
 
 body{
     background: url('/assets/img/bg-desktop.webp');
-    font-family: bai jamjuree;
+    font-family: "Bai Jamjuree", sans-serif;
 }
 
 #container {
@@ -23,12 +23,15 @@ body{
     background-color: var(--card-front-color);
     text-align: center;
     height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 300ms, ease-in-out;
 }
 
 
 .cartao_conteudo p {
     margin-top: 1rem;
     padding: 2rem;
+    margin-top: 4rem;
 }
 
 .cartao_conteudo_pergunta p{
@@ -49,6 +52,23 @@ body{
     margin: 0.6rem;
     border-radius: 0.6rem;
     font-size: 1vw;
+    backface-visibility: hidden;
+}
+
+
+.cartao:hover .cartao_conteudo{
+    transform: rotateY(180deg);
+}
+
+.cartao_conteudo_pergunta,
+.cartao_conteudo_resposta{
+    backface-visibility: hidden;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+.cartao_conteudo_resposta {
+ transform: rotateY(180deg)
 }
 
 footer{
